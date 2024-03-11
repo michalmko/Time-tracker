@@ -1,0 +1,136 @@
+@use './colors' as colors;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+body {
+	color: colors.$dark-color;
+	font-size: 1.2rem;
+	background: colors.$bg-gradient;
+	height: 100vh;
+	font-family: 'Oswald', sans-serif;
+}
+
+.heading1 {
+	font-size: 3rem;
+	letter-spacing: 0.05em;
+	text-decoration: underline;
+	margin-bottom: 0.2em;
+}
+
+.nav {
+	position: absolute;
+	width: 100%;
+	height: 55px;
+	color: colors.$light-color;
+	background-color: colors.$dark-color;
+	padding: 0 2em;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+		max-width: 1400px;
+		margin: auto;
+		font-family: 'Englebert', cursive;
+		font-weight: 800;
+		font-size: 2rem;
+	}
+
+	&__menu {
+		display: flex;
+		height: 100%;
+		text-transform: uppercase;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		padding: 0.5em 1em;
+		color: colors.$light-color;
+		text-decoration: none;
+		transition: background-color 0.3s;
+	}
+
+	&__item:hover {
+		background-color: colors.$active-color;
+	}
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1400px;
+	height: 100%;
+	margin: auto;
+
+	.login-box {
+		display: flex;
+		padding: 2em;
+		&__left {
+			display: flex;
+			flex-direction: column;
+			width: 400px;
+			margin-right: -350px;
+			z-index: -1;
+		}
+
+		&__img {
+			margin-top: 3em;
+			height: 100%;
+			width: 100%;
+			opacity: 0.2;
+		}
+
+		&__form {
+			display: flex;
+			height: 100%;
+			flex-direction: column;
+			align-items: end;
+			justify-content: end;
+		}
+
+		&__input {
+			font-size: 1.6rem;
+			padding: 0.8em;
+			width: 280px;
+			border: none;
+			border-radius: 15px;
+			margin-bottom: 2em;
+			outline: none;
+			background-color: colors.$light-color;
+		}
+
+		&__input:focus {
+			outline: solid 1.2px colors.$active-color;
+		}
+
+		&__btn {
+			cursor: pointer;
+			font-size: 1.6rem;
+			font-weight: 800;
+			padding: 0.8em 3em;
+			border: none;
+			border-radius: 20px;
+			background-color: colors.$dark-color;
+			color: colors.$light-color;
+			margin-bottom: 1em;
+			min-width: 180px;
+			transition: background-color 0.3s;
+		}
+
+		&__btn:last-child {
+			margin-bottom: 3em;
+		}
+	}
+}
