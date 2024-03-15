@@ -139,6 +139,10 @@ body {
 			cursor: pointer;
 			transition: background-color 0.3s;
 		}
+		
+		&__btn:last-child {
+			opacity: 0.5;
+		}
 
 		&__btn:focus {
 			outline: solid 1.2px colors.$active-color;
