@@ -13,7 +13,7 @@ html {
 
 body {
   color: rgb(25, 25, 27);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   background: radial-gradient(at left center, rgb(172, 172, 174), rgb(128, 128, 126));
   min-height: 100%;
   font-family: "Oswald", sans-serif;
@@ -100,13 +100,25 @@ body {
   align-items: end;
   justify-content: end;
 }
+.container .login-box__label {
+  position: relative;
+}
+.container .login-box__alert {
+  position: absolute;
+  width: 290px;
+  background-color: rgba(169, 32, 57, 0.3);
+  top: 3.8em;
+  padding: 0.2em 1em;
+  border-radius: 16px;
+  left: 0;
+}
 .container .login-box__input {
   font-size: 1.6rem;
   padding: 0.8em;
-  width: 280px;
+  width: 290px;
   border: none;
   border-radius: 15px;
-  margin-bottom: 2em;
+  margin-bottom: 3em;
   outline: none;
   background-color: rgb(249, 245, 234);
 }

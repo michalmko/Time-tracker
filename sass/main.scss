@@ -14,7 +14,8 @@ html {
 }
 body {
 	color: colors.$dark-color;
-	font-size: 1.2rem;
+	font-size: 1.25rem;
+	// letter-spacing: 0.1em;
 	background: colors.$bg-gradient;
 	min-height: 100%;
 	font-family: 'Oswald', sans-serif;
@@ -107,13 +108,27 @@ body {
 			justify-content: end;
 		}
 
+		&__label {
+			position: relative;
+		}
+
+		&__alert {
+			position: absolute;
+			width: 290px;
+			background-color: colors.$alert-collor;
+			top: 3.8em;
+			padding: 0.2em 1em;
+			border-radius: 16px;
+			left: 0;
+		}
+
 		&__input {
 			font-size: 1.6rem;
 			padding: 0.8em;
-			width: 280px;
+			width: 290px;
 			border: none;
 			border-radius: 15px;
-			margin-bottom: 2em;
+			margin-bottom: 3em;
 			outline: none;
 			background-color: colors.$light-color;
 		}
