@@ -19,15 +19,42 @@
     <nav class="nav">
         <div class="nav__container">
             <div class="nav__logo">
-                <p>Logo</p>
+                <a href="./index.html"><img class="nav__logo__img" src="./img/idoc_logo.png" alt=""></a>
             </div>
             <div class="nav__menu">
-                <a href="#" class="nav__item">link 1</a>
-                <a href="#" class="nav__item">link 2</a>
-                <a href="#" class="nav__item">link 3</a>
+                <div class="nav__items">
+                    <a href="#" class="nav__item">link 1</a>
+                    <a href="#" class="nav__item">link 2</a>
+                    <a href="#" class="nav__item">link 3</a>
+                </div>
             </div>
+            <button class="burger">
+                <div class="burger__box">
+                    <div class="burger__bars"></div>
+                </div>
+            </button>
+            <div class="nav__profile">
+                <img class="nav__profile-img" src="./img/user_pic.jpg" alt="profile picture">
+            </div>
+
         </div>
     </nav>
+
+    <!-- Dropdown -->
+    <div class="container">
+        <div class="dropdown">
+            <div class="dropdown__heading">
+                <h4>Aleksandra Kowalska</h4>
+            </div>
+            <div class="dropdown__body">
+
+                <a href="#">profile <img src="./img/user.svg" alt="profile icon"> </a>
+                <a href="#">logout <img src="./img/log-out.svg" alt="profile icon"> </a>
+
+            </div>
+
+        </div>
+    </div>
 
     <!-- Middle part -->
     <div class="container">
@@ -35,14 +62,14 @@
             <div class="login-box__left">
                 <h1 class="heading1">Time Tracking</h1>
                 <p class="text1">Create an account</p>
-                <img class="login-box__img" src="./img/piece_of_paper_and_pencil.png"
+                <img class="login-box__img" src="./img/Clock_shetch_pencil.png"
                     alt="image of clock in engineering style">
             </div>
             <div>
                 <form class="login-box__form" action="/singup1.html" method="post">
                     <div class="login-box__label">
                         <input name="name" placeholder="First Name" type="text" class="login-box__input">
-                        <p class="login-box__alert">First name is to short increase lenght min 4 charf fdfdfdfd </p>
+                        <p class="login-box__alert">First name is to short increase lenght min 4 charf </p>
                     </div>
                     <div class="login-box__label">
                         <input name="name" placeholder="Last Name" type="text" class="login-box__input">
@@ -54,9 +81,13 @@
                     </div>
                     <div class="login-box__label">
                         <input name="password" placeholder="Password" type="password" class="login-box__input">
-                        <p class="login-box__alert"></p>
+                        <p class="login-box__alert">Password</p>
                     </div>
-                    <input name="password_confirmation" placeholder="Password Confirmation" type="password" class="login-box__input">
+                    <div class="login-box__label">
+                        <input name="password_confirmation" placeholder="Password Confirmation" type="password"
+                            class="login-box__input">
+                        <p class="login-box__alert">Password Confirmation</p>
+                    </div>
                     <button type="submit" class="login-box__btn">Sing Up</button>
                     <a href="./index.html" class="login-box__btn">Login</a>
                 </form>
@@ -67,11 +98,11 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer__container">
-            <p>Michał Kochańsk - mk@idoc.as - &copy; 2024 </p>
+            <p>Michał Kochańsk - mk@idoc.as - &copy; <span id="footer-year"></span> </p>
         </div>
     </footer>
-
-
+    
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

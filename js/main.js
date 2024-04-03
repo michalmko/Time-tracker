@@ -1,21 +1,20 @@
 const currentYear = new Date().getFullYear();
 const footerYear = document.querySelector('#footer-year');
+const dropdownLink = document.querySelector('.nav__profile');
+const dropdownMenu = document.querySelector('.dropdown');
+const burger = document.querySelector('.burger');
+const navMenu = document.querySelector('.nav__menu');
 
 footerYear.textContent = currentYear;
 
-const validateEmail = email => {
-	if (email.toLowerCase().match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-		return true;
-	} else {
-		return false;
-	}
-};
+const togleDropdown = () => {
+	dropdownMenu.classList.toggle('dropdown--active');
+}
 
-const validatePassword = password => {
-    
-	return password.length >= 8 ? true : false;
-};
+const togleBurger = () => {
+	burger.classList.toggle('burger--active');
+	navMenu.classList.toggle('nav__menu--active');
+}
 
-console.log(validateEmail('a_aa@aaa2-1.pl'));
-
-console.log(validatePassword('aadbdaer1'));
+dropdownLink.addEventListener('click', togleDropdown);
+burger.addEventListener('click', togleBurger);

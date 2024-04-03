@@ -32,17 +32,22 @@ body {
   opacity: 0.8;
 }
 
+.hide {
+  display: none;
+}
+
 .nav {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 55px;
   color: rgb(249, 245, 234);
   background-color: rgb(25, 25, 27);
   padding: 0 2em;
+  z-index: 500;
 }
 .nav__container {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   height: 100%;
   max-width: 1400px;
@@ -51,15 +56,37 @@ body {
   font-weight: 800;
   font-size: 2rem;
 }
+.nav__logo {
+  height: 100%;
+  padding: 0.2em;
+}
+.nav__logo__img {
+  height: 100%;
+}
 .nav__menu {
-  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(20, 20, 20, 0.96);
+  width: 100%;
   height: 100%;
   text-transform: uppercase;
+  transform: translateY(-100%);
+  transition: transform 0.2s ease-in-out;
+}
+.nav__menu--active {
+  transform: translateY(0);
+}
+.nav__items {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .nav__item {
   display: flex;
-  align-items: center;
-  padding: 0.5em 1em;
+  text-align: center;
+  padding: 0.6em 1em 0.2em;
   color: rgb(249, 245, 234);
   text-decoration: none;
   transition: background-color 0.3s;
@@ -67,8 +94,100 @@ body {
 .nav__item:hover {
   background-color: rgb(23, 143, 160);
 }
+.nav__profile {
+  height: 100%;
+}
+.nav__profile-img {
+  padding: 0.15em 1em;
+  height: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.burger {
+  margin-left: auto;
+  padding: 0.5em;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+.burger__box {
+  width: 35px;
+  height: 25px;
+  position: relative;
+}
+.burger__bars {
+  transform: translateY(-50%);
+}
+.burger__bars, .burger__bars::before, .burger__bars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 3px;
+  width: 100%;
+  background: rgb(249, 245, 234);
+  transition: transform 0.4s ease-in-out;
+  border-radius: 2px;
+}
+.burger__bars::before {
+  top: -9px;
+}
+.burger__bars::after {
+  top: 9px;
+}
+
+.burger--active .burger__bars {
+  background-color: transparent;
+}
+
+.burger--active .burger__bars::before {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burger--active .burger__bars::after {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.dropdown {
+  position: absolute;
+  background: rgba(90, 110, 80, 0.8);
+  top: 0;
+  right: 0;
+  width: 280px;
+  border-radius: 5px;
+  transform: translateY(-280px);
+  transition: transform 0.3s, opacity 4s;
+  z-index: 100;
+}
+.dropdown--active {
+  transform: translateY(0);
+}
+.dropdown__heading {
+  text-align: center;
+  padding: 0.5em;
+  background-color: rgba(25, 135, 84, 0.5);
+}
+.dropdown__body {
+  padding: 0.4em 2em;
+  color: rgb(249, 245, 234);
+}
+.dropdown__body a {
+  display: block;
+  text-align: center;
+  padding: 0.1em;
+  color: rgb(249, 245, 234);
+  text-decoration: none;
+  list-style: none;
+  text-transform: uppercase;
+  transition: background-color 0.5s;
+}
+.dropdown__body a:hover {
+  background-color: rgba(25, 135, 84, 0.5);
+}
 
 .container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,7 +196,8 @@ body {
   margin: auto;
 }
 .container .login-box {
-  margin: 8em 0;
+  position: relative;
+  margin: 3em 0;
   display: flex;
 }
 .container .login-box__left {
@@ -85,7 +205,9 @@ body {
   flex-direction: column;
   width: 300px;
   margin-right: -300px;
-  z-index: -1;
+}
+.container .login-box__right {
+  z-index: 5;
 }
 .container .login-box__img {
   margin-top: 5em;
@@ -102,10 +224,11 @@ body {
 }
 .container .login-box__label {
   position: relative;
+  width: 295px;
 }
 .container .login-box__alert {
   position: absolute;
-  width: 290px;
+  width: 100%;
   background-color: rgba(169, 32, 57, 0.3);
   top: 3.8em;
   padding: 0.2em 1em;
@@ -115,7 +238,7 @@ body {
 .container .login-box__input {
   font-size: 1.6rem;
   padding: 0.8em;
-  width: 290px;
+  width: 100%;
   border: none;
   border-radius: 15px;
   margin-bottom: 3em;
@@ -188,6 +311,18 @@ body {
   }
 }
 @media (min-width: 992px) {
+  .nav__menu {
+    all: revert;
+    text-transform: uppercase;
+    margin-left: auto;
+  }
+  .nav__items {
+    all: revert;
+    display: flex;
+  }
+  .burger {
+    display: none;
+  }
   .container .login-box__left {
     margin-right: 5em;
     width: 450px;

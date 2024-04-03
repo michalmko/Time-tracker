@@ -21,15 +21,42 @@
     <nav class="nav">
         <div class="nav__container">
             <div class="nav__logo">
-                <p>Logo</p>
+                <a href="./index.html"><img class="nav__logo__img" src="./img/idoc_logo.png" alt=""></a>
             </div>
             <div class="nav__menu">
-                <a href="#" class="nav__item">link 1</a>
-                <a href="#" class="nav__item">link 2</a>
-                <a href="#" class="nav__item">link 3</a>
+                <div class="nav__items">
+                    <a href="#" class="nav__item">link 1</a>
+                    <a href="#" class="nav__item">link 2</a>
+                    <a href="#" class="nav__item">link 3</a>
+                </div>
             </div>
+            <button class="burger">
+                <div class="burger__box">
+                    <div class="burger__bars"></div>
+                </div>
+            </button>
+            <div class="nav__profile">
+                <img class="nav__profile-img" src="./img/user_pic.jpg" alt="profile picture">
+            </div>
+
         </div>
     </nav>
+
+    <!-- Dropdown -->
+    <div class="container">
+        <div class="dropdown">
+            <div class="dropdown__heading">
+                <h4>Aleksandra Kowalska</h4>
+            </div>
+            <div class="dropdown__body">
+
+                <a href="#">profile <img src="./img/user.svg" alt="profile icon"> </a>
+                <a href="#">logout <img src="./img/log-out.svg" alt="profile icon"> </a>
+
+            </div>
+
+        </div>
+    </div>
 
     <!-- Middle part -->
     <div class="container">
@@ -37,12 +64,18 @@
             <div class="login-box__left">
                 <h1 class="heading1">Time Tracking</h1>
                 <p class="text1">Login to the system</p>
-                <img class="login-box__img" src="./img/clock.png" alt="image of clock in engineering style">
+                <img class="login-box__img" src="./img/Clock_shetch_02.png" alt="image of clock in engineering style">
             </div>
-            <div>
+            <div class="login-box__right">
                 <form class="login-box__form" action="/singup1.html" method="post">
-                    <input name="email" placeholder="Adres e-mail" type="email" class="login-box__input">
-                    <input name="password" placeholder="Password" type="password" class="login-box__input">
+                    <div class="login-box__label">
+                        <input name="email" placeholder="Adres e-mail" type="email" class="login-box__input">
+                        <p class="login-box__alert">Email</p>
+                    </div>
+                    <div class="login-box__label">
+                        <input name="password" placeholder="Password" type="password" class="login-box__input">
+                        <p class="login-box__alert">Password</p>
+                    </div>
                     <button type="submit" class="login-box__btn">Login</button>
                     <a href="/register.html" class="login-box__btn">Sing up</a>
                 </form>

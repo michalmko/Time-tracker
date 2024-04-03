@@ -8,6 +8,7 @@
 	padding: 0;
 }
 
+// general
 html {
 	font-size: 62.5%;
 	height: 100%;
@@ -33,18 +34,23 @@ body {
 	font-size: 1.6rem;
 	opacity: 0.8;
 }
+.hide {
+	display: none;
+}
 
+// NAVIGATION
 .nav {
-	position: absolute;
+	position: relative;
 	width: 100%;
 	height: 55px;
 	color: colors.$light-color;
 	background-color: colors.$dark-color;
 	padding: 0 2em;
+	z-index: 500;
 
 	&__container {
 		display: flex;
-		justify-content: space-between;
+		justify-content: start;
 		align-items: center;
 		height: 100%;
 		max-width: 1400px;
@@ -54,27 +60,153 @@ body {
 		font-size: 2rem;
 	}
 
+	&__logo {
+		height: 100%;
+		padding: 0.2em;
+		&__img {
+			height: 100%;
+		}
+	}
+
 	&__menu {
-		display: flex;
+		position: fixed;
+		top: 0;
+		left:0;
+		background-color: rgba(20, 20, 20, 0.96);
+		width:100%;
 		height: 100%;
 		text-transform: uppercase;
+		transform: translateY(-100%);
+		transition: transform 0.2s ease-in-out;
+		// background-color: orange;
+	}
+	&__menu--active {
+		transform: translateY(0);
+	}
+
+	&__items {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 
 	&__item {
+		// font-size: 100px;
 		display: flex;
-		align-items: center;
-		padding: 0.5em 1em;
+		text-align: center;
+		padding: 0.6em 1em 0.2em;
 		color: colors.$light-color;
 		text-decoration: none;
 		transition: background-color 0.3s;
+
 	}
 
 	&__item:hover {
 		background-color: colors.$active-color;
 	}
+
+	&__profile {
+		height: 100%;
+	}
+	&__profile-img {
+		padding: 0.15em 1em;
+		height: 100%;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+}
+//BURGER
+.burger {
+	margin-left: auto;
+	padding: 0.5em;
+	background-color: transparent;
+	cursor: pointer;
+	border: none;
+	&__box {
+		width: 35px;
+		height: 25px;
+		position: relative;
+
+	}
+	&__bars{
+		transform: translateY(-50%);
+	}
+	&__bars, &__bars::before, &__bars::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 50%;
+		height: 3px;
+		width: 100%;
+		background: colors.$light-color;
+		transition: transform 0.4s ease-in-out;
+		border-radius: 2px;
+
+	}
+	&__bars::before {
+		top: -9px;
+	}
+	&__bars::after {
+		top: 9px;
+	}
 }
 
+.burger--active .burger__bars {
+	background-color: transparent;
+}
+.burger--active .burger__bars::before {
+	transform: translateY(9px) rotate(45deg);
+}
+
+.burger--active .burger__bars::after {
+	transform: translateY(-9px) rotate(-45deg);
+}
+
+
+// DROPDOWN
+.dropdown {
+	position: absolute;
+	background: colors.$gold-color-transparent;
+	top: 0;
+	right: 0;
+	width: 280px;
+	border-radius: 5px;
+	transform: translateY(-280px);
+	transition: transform 0.3s, opacity 4s;
+	z-index: 100;
+
+	&--active {
+		transform: translateY(0);
+	}
+	&__heading {
+		text-align: center;
+		padding: 0.5em;
+		background-color: colors.$success-color;
+	}
+
+	&__body {
+		padding: 0.4em 2em;
+		color: colors.$light-color;
+		a {
+			display: block;
+			text-align: center;
+			padding: 0.1em;
+			color: colors.$light-color;
+			text-decoration: none;
+			list-style: none;
+			text-transform: uppercase;
+			transition: background-color 0.5s;
+		}
+		a:hover {
+			background-color: colors.$success-color;
+		}
+	}
+}
+
+// MAIN
 .container {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -83,14 +215,17 @@ body {
 	margin: auto;
 
 	.login-box {
-		margin: 8em 0;
+		position: relative;
+		margin: 3em 0;
 		display: flex;
 		&__left {
 			display: flex;
 			flex-direction: column;
 			width: 300px;
 			margin-right: -300px;
-			z-index: -1;
+		}
+		&__right {
+			z-index: 5;
 		}
 
 		&__img {
@@ -110,12 +245,13 @@ body {
 
 		&__label {
 			position: relative;
+			width: 295px;
 		}
 
 		&__alert {
 			position: absolute;
-			width: 290px;
-			background-color: colors.$alert-collor;
+			width: 100%;
+			background-color: colors.$alert-color;
 			top: 3.8em;
 			padding: 0.2em 1em;
 			border-radius: 16px;
@@ -125,7 +261,7 @@ body {
 		&__input {
 			font-size: 1.6rem;
 			padding: 0.8em;
-			width: 290px;
+			width: 100%;
 			border: none;
 			border-radius: 15px;
 			margin-bottom: 3em;
@@ -154,7 +290,7 @@ body {
 			cursor: pointer;
 			transition: background-color 0.3s;
 		}
-		
+
 		&__btn:last-child {
 			opacity: 0.5;
 		}
@@ -169,6 +305,7 @@ body {
 	}
 }
 
+// FOOTER
 .footer {
 	position: absolute;
 	bottom: 0;
@@ -186,6 +323,8 @@ body {
 		padding: 0 2em;
 	}
 }
+
+// MEDIA
 
 @media (min-width: 576px) {
 	.container {
@@ -216,6 +355,23 @@ body {
 }
 
 @media (min-width: 992px) {
+	.nav{
+		&__menu {
+			all: revert;
+			text-transform: uppercase;
+			margin-left: auto;
+			
+
+		}
+		&__items{
+			all: revert;
+			display: flex;
+		}
+	}
+	.burger {
+		display: none;
+	}
+
 	.container {
 		.login-box {
 			&__left {
