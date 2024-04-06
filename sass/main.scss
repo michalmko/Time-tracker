@@ -24,7 +24,7 @@ body {
 }
 
 .heading1 {
-	font-size: 3rem;
+	font-size: 2.5rem;
 	letter-spacing: 0.05em;
 	text-decoration: underline;
 	margin-bottom: 0.2em;
@@ -71,9 +71,9 @@ body {
 	&__menu {
 		position: fixed;
 		top: 0;
-		left:0;
+		left: 0;
 		background-color: rgba(20, 20, 20, 0.96);
-		width:100%;
+		width: 100%;
 		height: 100%;
 		text-transform: uppercase;
 		transform: translateY(-100%);
@@ -99,7 +99,6 @@ body {
 		color: colors.$light-color;
 		text-decoration: none;
 		transition: background-color 0.3s;
-
 	}
 
 	&__item:hover {
@@ -127,12 +126,13 @@ body {
 		width: 35px;
 		height: 25px;
 		position: relative;
-
 	}
-	&__bars{
+	&__bars {
 		transform: translateY(-50%);
 	}
-	&__bars, &__bars::before, &__bars::after {
+	&__bars,
+	&__bars::before,
+	&__bars::after {
 		content: '';
 		position: absolute;
 		left: 0;
@@ -142,7 +142,6 @@ body {
 		background: colors.$light-color;
 		transition: transform 0.4s ease-in-out;
 		border-radius: 2px;
-
 	}
 	&__bars::before {
 		top: -9px;
@@ -162,7 +161,6 @@ body {
 .burger--active .burger__bars::after {
 	transform: translateY(-9px) rotate(-45deg);
 }
-
 
 // DROPDOWN
 .dropdown {
@@ -207,16 +205,32 @@ body {
 // MAIN
 .container {
 	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	max-width: 1400px;
 	height: 100%;
 	margin: auto;
+	.flash-message {
+		display: flex;
+		justify-content: center;
+		margin: 1em;
+		&__text {
+			padding: 0.5em 2em;
+			border-radius: 1em;
+			font-size: 1.3rem;
+			&--success {
+				background-color: colors.$success-color;
+			}
+			&--faliure {
+				background-color: colors.$alert-color;
+			}
+		}
+	}
 
 	.login-box {
 		position: relative;
-		margin: 3em 0;
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		margin: 2em 0;
 		display: flex;
 		&__left {
 			display: flex;
@@ -303,6 +317,10 @@ body {
 			background-color: colors.$active-color;
 		}
 	}
+	//SECTION
+	.title {
+		padding: 2em 2em;
+	}
 }
 
 // FOOTER
@@ -355,15 +373,13 @@ body {
 }
 
 @media (min-width: 992px) {
-	.nav{
+	.nav {
 		&__menu {
 			all: revert;
 			text-transform: uppercase;
 			margin-left: auto;
-			
-
 		}
-		&__items{
+		&__items {
 			all: revert;
 			display: flex;
 		}
@@ -381,6 +397,14 @@ body {
 			&__btn:last-child {
 				margin-bottom: 5em;
 			}
+		}
+	}
+}
+
+@media (min-width: 1400px) {
+	.container {
+		.title {
+			padding: 2em 0;
 		}
 	}
 }

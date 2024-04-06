@@ -21,7 +21,7 @@ body {
 }
 
 .heading1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   letter-spacing: 0.05em;
   text-decoration: underline;
   margin-bottom: 0.2em;
@@ -188,16 +188,32 @@ body {
 
 .container {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   max-width: 1400px;
   height: 100%;
   margin: auto;
 }
+.container .flash-message {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}
+.container .flash-message__text {
+  padding: 0.5em 2em;
+  border-radius: 1em;
+  font-size: 1.3rem;
+}
+.container .flash-message__text--success {
+  background-color: rgba(25, 135, 84, 0.5);
+}
+.container .flash-message__text--faliure {
+  background-color: rgba(169, 32, 57, 0.3);
+}
 .container .login-box {
   position: relative;
-  margin: 3em 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 2em 0;
   display: flex;
 }
 .container .login-box__left {
@@ -274,6 +290,9 @@ body {
 .container .login-box__btn:hover {
   background-color: rgb(23, 143, 160);
 }
+.container .title {
+  padding: 2em 2em;
+}
 
 .footer {
   position: absolute;
@@ -329,5 +348,10 @@ body {
   }
   .container .login-box__btn:last-child {
     margin-bottom: 5em;
+  }
+}
+@media (min-width: 1400px) {
+  .container .title {
+    padding: 2em 0;
   }
 }/*# sourceMappingURL=main.css.map */
