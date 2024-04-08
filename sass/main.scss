@@ -91,18 +91,22 @@ body {
 		transform: translate(-50%, -50%);
 	}
 
-	&__item {
+	&__item, &__sub-item{
 		// font-size: 100px;
 		display: flex;
-		text-align: center;
+		// text-align: center;
 		padding: 0.6em 1em 0.2em;
+		transition: background-color 0.3s;
 		color: colors.$light-color;
 		text-decoration: none;
-		transition: background-color 0.3s;
+	}
+	&__item:hover, &__sub-item:hover {
+		background-color: colors.$active-color;
 	}
 
-	&__item:hover {
-		background-color: colors.$active-color;
+	&__sub-items {
+		font-size: 1.5rem;
+		margin-left: 2em;
 	}
 
 	&__profile {
@@ -202,28 +206,32 @@ body {
 	}
 }
 
+//FLASH MESSAGE
+.flash-message {
+	display: flex;
+	justify-content: center;
+	
+	&__text {
+		margin: 1em;
+		padding: 0.5em 2em;
+		border-radius: 1em;
+		font-size: 1.3rem;
+		&--success {
+			background-color: colors.$success-color;
+		}
+		&--faliure {
+			background-color: colors.$alert-color;
+		}
+	}
+}
+
 // MAIN
 .container {
 	position: relative;
 	max-width: 1400px;
 	height: 100%;
 	margin: auto;
-	.flash-message {
-		display: flex;
-		justify-content: center;
-		margin: 1em;
-		&__text {
-			padding: 0.5em 2em;
-			border-radius: 1em;
-			font-size: 1.3rem;
-			&--success {
-				background-color: colors.$success-color;
-			}
-			&--faliure {
-				background-color: colors.$alert-color;
-			}
-		}
-	}
+
 
 	.login-box {
 		position: relative;
@@ -382,7 +390,30 @@ body {
 		&__items {
 			all: revert;
 			display: flex;
+			text-align: center;
 		}
+		&__item {
+			min-width: 120px;
+			
+		}
+		&__item-container {
+			position: relative;
+		}
+		&__sub-items {
+			position: absolute;
+			left: 0;
+			min-width: 120px;
+			margin-left: 2px;
+			background-color: rgba(20, 20, 20, 0.5)
+		}
+		&__sub-item {
+			padding: 1em;
+			display: none;
+		}
+		&__items:hover &__sub-item{
+			display: flex;
+		}
+
 	}
 	.burger {
 		display: none;

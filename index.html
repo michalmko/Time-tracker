@@ -25,9 +25,16 @@
             </div>
             <div class="nav__menu">
                 <div class="nav__items">
-                    <a href="#" class="nav__item">link 1</a>
-                    <a href="#" class="nav__item">link 2</a>
-                    <a href="#" class="nav__item">link 3</a>
+                    <a class="nav__item" href="#">link 1</a>
+                    <a class="nav__item" href="#">link 2</a>
+                    <div class="nav__item-container">
+                        <a class="nav__item" href="#">mgmt.</a>
+                        <div class="nav__sub-items">
+                            <a class="nav__sub-item" href="#">add client</a>
+                            <a class="nav__sub-item" href="#">add project</a>
+                            <a class="nav__sub-item" href="#">add task</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <button class="burger">
@@ -58,11 +65,11 @@
         </div>
     </div>
 
+    <div class="container flash-message">
+        <p class="flash-message__text flash-message__text--faliure">test</p>
+    </div>
     <!-- Middle part -->
     <div class="container">
-        <div class="flash-message">
-            <p class="flash-message__text flash-message__text--faliure">test</p>
-        </div>
         <div class="login-box">
             <div class="login-box__left">
                 <h1 class="heading1">Time Tracking</h1>
