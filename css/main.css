@@ -1,3 +1,13 @@
+@keyframes menu {
+  from {
+    opasity: 0;
+    transform: scale(0.6) translatey(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translatey(7px);
+  }
+}
 *,
 *::before,
 *::after {
@@ -355,14 +365,29 @@ body {
     left: 0;
     min-width: 120px;
     margin-left: 2px;
-    background-color: rgba(20, 20, 20, 0.5);
   }
   .nav__sub-item {
-    padding: 1em;
+    display: block;
+    padding: 0.8em;
+    background-color: rgba(20, 20, 20, 0.5);
     display: none;
+    opacity: 0;
   }
-  .nav__items:hover .nav__sub-item {
+  .nav__item-container:hover .nav__sub-item {
     display: flex;
+    animation: menu 0.5s forwards;
+  }
+  .nav__item-container:hover .nav__sub-item:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .nav__item-container:hover .nav__sub-item:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  .nav__item-container:hover .nav__sub-item:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+  .nav__item-container:hover .nav__sub-item:nth-child(5) {
+    animation-delay: 0.8s;
   }
   .burger {
     display: none;

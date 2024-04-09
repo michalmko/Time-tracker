@@ -1,4 +1,5 @@
 @use './colors' as colors;
+@use './animations' as animations;
 
 *,
 *::before,
@@ -91,7 +92,8 @@ body {
 		transform: translate(-50%, -50%);
 	}
 
-	&__item, &__sub-item{
+	&__item,
+	&__sub-item {
 		// font-size: 100px;
 		display: flex;
 		// text-align: center;
@@ -100,7 +102,8 @@ body {
 		color: colors.$light-color;
 		text-decoration: none;
 	}
-	&__item:hover, &__sub-item:hover {
+	&__item:hover,
+	&__sub-item:hover {
 		background-color: colors.$active-color;
 	}
 
@@ -210,7 +213,7 @@ body {
 .flash-message {
 	display: flex;
 	justify-content: center;
-	
+
 	&__text {
 		margin: 1em;
 		padding: 0.5em 2em;
@@ -231,7 +234,6 @@ body {
 	max-width: 1400px;
 	height: 100%;
 	margin: auto;
-
 
 	.login-box {
 		position: relative;
@@ -394,7 +396,6 @@ body {
 		}
 		&__item {
 			min-width: 120px;
-			
 		}
 		&__item-container {
 			position: relative;
@@ -404,16 +405,32 @@ body {
 			left: 0;
 			min-width: 120px;
 			margin-left: 2px;
-			background-color: rgba(20, 20, 20, 0.5)
+			
 		}
 		&__sub-item {
-			padding: 1em;
+			display: block;
+			// margin-top: 0.5em;
+			padding: 0.8em;
+			background-color: rgba(20, 20, 20, 0.5);
 			display: none;
+			opacity: 0;
 		}
-		&__items:hover &__sub-item{
+		&__item-container:hover &__sub-item {
 			display: flex;
+			animation: menu 0.5s forwards;
 		}
-
+		&__item-container:hover &__sub-item:nth-child(2) {
+			animation-delay: 0.2s;
+		}
+		&__item-container:hover &__sub-item:nth-child(3) {
+			animation-delay: 0.4s;
+		}
+		&__item-container:hover &__sub-item:nth-child(4) {
+			animation-delay: 0.6s;
+		}
+		&__item-container:hover &__sub-item:nth-child(5) {
+			animation-delay: 0.8s;
+		}
 	}
 	.burger {
 		display: none;

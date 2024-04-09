@@ -1,0 +1,11 @@
+
+@keyframes menu {
+    from {
+        opasity: 0; 
+        transform: scale(0.6) translatey(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translatey(7px);;
+    }
+}
