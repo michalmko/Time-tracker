@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time tracker</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Englebert&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/main.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav__container">
+            <div class="nav__logo">
+                <a href="./index.html"><img class="nav__logo__img" src="./img/idoc_logo.png" alt="logo"></a>
+            </div>
+            <div class="nav__menu">
+                <div class="nav__items">
+                    <div class="nav__item-container">
+                        <a class="nav__item" href="#">link 1</a>
+                        <div class="nav__sub-items">
+
+                        </div>
+                    </div>
+                    <a class="nav__item" href="#">link 2</a>
+                    <div class="nav__item-container">
+                        <a class="nav__item" href="#">mgmt.</a>
+                        <div class="nav__sub-items">
+                            <a class="nav__sub-item" href="#">create client</a>
+                            <a class="nav__sub-item" href="#">add project</a>
+                            <a class="nav__sub-item" href="#">add task</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="burger">
+                <div class="burger__box">
+                    <div class="burger__bars"></div>
+                </div>
+            </button>
+            <div class="nav__profile">
+                <img class="nav__profile-img" src="./img/user_pic.jpg" alt="profile picture">
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Dropdown -->
+    <div class="container">
+        <div class="dropdown">
+            <div class="dropdown__heading">
+                <h4>Aleksandra Kowalska</h4>
+            </div>
+            <div class="dropdown__body">
+
+                <a href="#">profile <img src="./img/user.svg" alt="profile icon"> </a>
+                <a href="#">logout <img src="./img/log-out.svg" alt="profile icon"> </a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container flash-message">
+        <p class="flash-message__text flash-message__text--faliure">test</p>
+    </div>
+    <!-- Middle part -->
+    <div class="container">
+        <div class="login-box">
+            <div class="login-box__left">
+                <h1 class="heading1">Create Client</h1>
+                <p class="text1">Add client to database</p>
+                <img class="login-box__img" src="./img/rocket_launch.png" alt="image of clock in engineering style">
+            </div>
+            <div class="login-box__right">
+                <form class="login-box__form" action="/singup1.html" method="POST">
+                    <div class="login-box__label">
+                        <input name="clientname" placeholder="Client Name" type="text" class="login-box__input">
+                        <p class="login-box__alert">Client Name</p>
+                    </div>
+                    <div class="login-box__label">
+                        <input name="companyno" placeholder="Company Registration Number" type="text"
+                            class="login-box__input">
+                        <p class="login-box__alert">Company Registration Number</p>
+                    </div>
+                    <div class="login-box__label">
+                        <select name="country" class="login-box__input">
+                            <option value="">country</option>
+                            <option value="Aland Islands">Aland Islands</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Andorra">Andorra</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Belarus">Belarus</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                            <option value="Bulgaria">Bulgaria</option>
+                            <option value="Croatia">Croatia</option>
+                            <option value="Czech Republic">Czech Republic</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Estonia">Estonia</option>
+                            <option value="Faroe Islands">Faroe Islands</option>
+                            <option value="Finland">Finland</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Gibraltar">Gibraltar</option>
+                            <option value="Greece">Greece</option>
+                            <option value="Guernsey">Guernsey</option>
+                            <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                            <option value="Hungary">Hungary</option>
+                            <option value="Iceland">Iceland</option>
+                            <option value="Ireland">Ireland</option>
+                            <option value="Isle of Man">Isle of Man</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Jersey">Jersey</option>
+                            <option value="Kosovo">Kosovo</option>
+                            <option value="Latvia">Latvia</option>
+                            <option value="Liechtenstein">Liechtenstein</option>
+                            <option value="Lithuania">Lithuania</option>
+                            <option value="Luxembourg">Luxembourg</option>
+                            <option value="Malta">Malta</option>
+                            <option value="Moldova, Republic of">Moldova, Republic of</option>
+                            <option value="Monaco">Monaco</option>
+                            <option value="Montenegro">Montenegro</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="Norway">Norway</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Romania">Romania</option>
+                            <option value="San Marino">San Marino</option>
+                            <option value="Serbia">Serbia</option>
+                            <option value="Serbia and Montenegro">Serbia and Montenegro</option>
+                            <option value="Slovakia">Slovakia</option>
+                            <option value="Slovenia">Slovenia</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Switzerland">Switzerland</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                        </select>
+                        <p class="login-box__alert">Company Registration Number</p>
+                    </div>
+                    <div class="login-box__label">
+                        <input name="street" placeholder="Street" type="text" class="login-box__input">
+                        <p class="login-box__alert">Password</p>
+                    </div>
+                    <div class="login-box__label">
+                        <input name="city" placeholder="City" type="text" class="login-box__input">
+                        <p class="login-box__alert">City</p>
+                    </div>
+                    <div class="login-box__label">
+                        <textarea rows="3" name="comment" placeholder="Comment (optional)" class="login-box__input"></textarea>
+                    </div>
+                    <button type="submit" class="login-box__btn">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <p>Michał Kochańsk - mk@idoc.as - &copy; <span id="footer-year"></span> </p>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

@@ -336,7 +336,9 @@ body {
     width: 400px;
   }
   .container .login-box__img {
-    width: 100%;
+    -o-object-fit: scale-down;
+       object-fit: scale-down;
+    max-height: 600px;
     opacity: 1;
   }
   .container .login-box__btn:last-child {
