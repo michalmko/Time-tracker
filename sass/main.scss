@@ -1,4 +1,5 @@
 @use './colors' as colors;
+@use './vars' as vars;
 @use './animations' as animations;
 
 *,
@@ -15,11 +16,12 @@ html {
 	height: 100%;
 }
 body {
+	min-height: 100%;
+	padding-bottom: vars.$footer-height;
 	color: colors.$dark-color;
 	font-size: 1.25rem;
 	// letter-spacing: 0.1em;
 	background: colors.$bg-gradient;
-	min-height: 100%;
 	font-family: 'Oswald', sans-serif;
 	position: relative;
 }
@@ -43,7 +45,7 @@ body {
 .nav {
 	position: relative;
 	width: 100%;
-	height: 55px;
+	height: vars.$nav-height;
 	color: colors.$light-color;
 	background-color: colors.$dark-color;
 	padding: 0 2em;
@@ -232,16 +234,15 @@ body {
 .container {
 	position: relative;
 	max-width: 1400px;
-	height: 100%;
 	margin: auto;
 
 	.login-box {
-		position: relative;
+		// position: relative;
 		display: flex;
 		width: 100%;
 		justify-content: center;
 		margin: 2em 0;
-		display: flex;
+
 		&__left {
 			display: flex;
 			flex-direction: column;
@@ -249,6 +250,7 @@ body {
 			margin-right: -300px;
 		}
 		&__right {
+			margin-top: 2.5em;
 			z-index: 5;
 		}
 
@@ -259,9 +261,10 @@ body {
 		}
 
 		&__form {
+			// background-color: red;
 			margin-top: 4em;
 			display: flex;
-			height: 100%;
+			// height: 100%;
 			flex-direction: column;
 			align-items: end;
 			justify-content: end;
@@ -300,7 +303,7 @@ body {
 		&__btn {
 			min-width: 180px;
 			font-size: 1.6rem;
-			margin-bottom: 1.5em;
+			margin-bottom: 1em;
 			font-weight: 800;
 			padding: 0.8em 3em;
 			font-family: 'Oswald', sans-serif;
@@ -313,10 +316,9 @@ body {
 			text-align: center;
 			cursor: pointer;
 			transition: background-color 0.3s;
-		}
-
-		&__btn:last-child {
-			opacity: 0.5;
+			&--secondary {
+				background-color: colors.$secondary-color;
+			}
 		}
 
 		&__btn:focus {
@@ -337,9 +339,8 @@ body {
 .footer {
 	position: absolute;
 	bottom: 0;
-	left: 0;
 	width: 100%;
-	height: 40px;
+	height: vars.$footer-height;
 	background-color: colors.$light-color;
 	display: flex;
 	align-items: center;
@@ -369,7 +370,6 @@ body {
 		.login-box {
 			&__left {
 				margin-right: 1.5em;
-				width: 400px;
 			}
 			&__img {
 				object-fit: scale-down;
@@ -406,7 +406,6 @@ body {
 			left: 0;
 			min-width: 120px;
 			margin-left: 2px;
-			
 		}
 		&__sub-item {
 			display: block;
@@ -442,9 +441,6 @@ body {
 			&__left {
 				margin-right: 5em;
 				width: 450px;
-			}
-			&__btn:last-child {
-				margin-bottom: 5em;
 			}
 		}
 	}

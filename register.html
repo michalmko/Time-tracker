@@ -19,13 +19,25 @@
     <nav class="nav">
         <div class="nav__container">
             <div class="nav__logo">
-                <a href="./index.html"><img class="nav__logo__img" src="./img/idoc_logo.png" alt=""></a>
+                <a href="./index.html"><img class="nav__logo__img" src="./img/idoc_logo.png" alt="logo"></a>
             </div>
             <div class="nav__menu">
                 <div class="nav__items">
-                    <a href="#" class="nav__item">link 1</a>
-                    <a href="#" class="nav__item">link 2</a>
-                    <a href="#" class="nav__item">link 3</a>
+                    <div class="nav__item-container">
+                        <a class="nav__item" href="#">link 1</a>
+                        <div class="nav__sub-items">
+
+                        </div>
+                    </div>
+                    <a class="nav__item" href="#">link 2</a>
+                    <div class="nav__item-container">
+                        <a class="nav__item" href="#">mgmt.</a>
+                        <div class="nav__sub-items">
+                            <a class="nav__sub-item" href="/create-client.html">create client</a>
+                            <a class="nav__sub-item" href="#">add project</a>
+                            <a class="nav__sub-item" href="#">add task</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <button class="burger">
@@ -56,6 +68,10 @@
         </div>
     </div>
 
+    <div class="container flash-message">
+        <p class="flash-message__text flash-message__text--faliure">test</p>
+    </div>
+
     <!-- Middle part -->
     <div class="container">
         <div class="login-box">
@@ -65,7 +81,7 @@
                 <img class="login-box__img" src="./img/Clock_shetch_pencil.png"
                     alt="image of clock in engineering style">
             </div>
-            <div class="login_box__right">
+            <div class="login-box__right">
                 <form class="login-box__form" action="/singup1.html" method="post">
                     <div class="login-box__label">
                         <input name="name" placeholder="First Name" type="text" class="login-box__input">
@@ -89,7 +105,7 @@
                         <p class="login-box__alert">Password Confirmation</p>
                     </div>
                     <button type="submit" class="login-box__btn">Sing Up</button>
-                    <a href="./index.html" class="login-box__btn">Login</a>
+                    <a href="./index.html" class="login-box__btn login-box__btn--secondary">Login</a>
                 </form>
             </div>
         </div>
@@ -101,7 +117,7 @@
             <p>Michał Kochańsk - mk@idoc.as - &copy; <span id="footer-year"></span> </p>
         </div>
     </footer>
-    
+
     <script src="./js/main.js"></script>
 </body>
 
