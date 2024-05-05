@@ -79,20 +79,26 @@
             <div class="login-box__left">
                 <h1 class="heading1">Create Client</h1>
                 <p class="text1">Add client to database</p>
-                <img class="login-box__img" src="./img/rocket_launch.png" alt="image of clock in engineering style">
+                <img class="login-box__img" src="./img/rocket_launch.png" alt="Image lunching rocket">
             </div>
             <div class="login-box__right">
-                <form class="login-box__form" action="/singup1.html" method="POST">
+                <form class="login-box__form" action="/create-clients" method="POST">
                     <div class="login-box__label">
-                        <input name="clientname" placeholder="Client Name" type="text" class="login-box__input">
+                        <input name="name" placeholder="Client Name" type="text" class="login-box__input">
                         <p class="login-box__alert">Client Name</p>
                     </div>
                     <div class="login-box__label">
-                        <input name="clienlogo" placeholder="Client Logo" type="file" class="login-box__input" accept="image/png, image/jpeg">
-                        <p class="login-box__alert">Client Logo</p>
+                        <label for="logo" class="login-box__input">
+                            <img src="/img/upload.svg" alt="">
+                            png or jpeg logo
+                        </label>
+                        <input id="logo" name="logo" placeholder="Client Logo" type="file"
+                            class="login-box__input--file" accept="image/png, image/jpeg">
+                        <p class="login-box__alert">
+                            Client Logo</p>
                     </div>
                     <div class="login-box__label">
-                        <input name="companyno" placeholder="Company Registration Number" type="text"
+                        <input name="registration-number" placeholder="Company Registration Number" type="text"
                             class="login-box__input">
                         <p class="login-box__alert">Company Registration Number</p>
                     </div>
@@ -151,25 +157,34 @@
                             <option value="Ukraine">Ukraine</option>
                             <option value="United Kingdom">United Kingdom</option>
                         </select>
-                        <p class="login-box__alert">Company Registration Number</p>
+                        <p class="login-box__alert">Country</p>
                     </div>
                     <div class="login-box__label">
                         <input name="street" placeholder="Street" type="text" class="login-box__input">
-                        <p class="login-box__alert">Password</p>
+                        <p class="login-box__alert">Street</p>
                     </div>
                     <div class="login-box__label">
                         <input name="city" placeholder="City" type="text" class="login-box__input">
                         <p class="login-box__alert">City</p>
                     </div>
                     <div class="login-box__label">
-                        <textarea rows="3" name="comment" placeholder="Comment (optional)" class="login-box__input"></textarea>
+                        <input name="email" placeholder="Email" type="text" class="login-box__input">
+                        <p class="login-box__alert">Email</p>
+                    </div>
+                    <div class="login-box__label">
+                        <input name="telephone" placeholder="Telephone" type="text" class="login-box__input">
+                        <p class="login-box__alert">Telephone</p>
+                    </div>
+                    <div class="login-box__label">
+                        <textarea rows="3" name="comment" placeholder="Comment (optional)"
+                            class="login-box__input"></textarea>
                     </div>
                     <button type="submit" class="login-box__btn">Add Client</button>
                 </form>
             </div>
         </div>
     </div>
-    
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -177,7 +192,7 @@
             <p>Michał Kochańsk - mk@idoc.as - &copy; <span id="footer-year"></span> </p>
         </div>
     </footer>
-    
+
 
     <script src="./js/main.js"></script>
 </body>

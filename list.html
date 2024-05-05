@@ -74,41 +74,56 @@
 
     <!-- Middle part -->
     <div class="container">
-        <div class="login-box">
-            <div class="login-box__left">
-                <h1 class="heading1">Time Tracking</h1>
-                <p class="text1">Create an account</p>
-                <img class="login-box__img" src="./img/Clock_shetch_pencil.png"
-                    alt="Image of clock in engineering style">
+        
+        <h1 class="heading1">List of Clients</h1>
+        <div class="client-containter">
+            <div class="client-containter__heading">
+                <div class="client-containter__item">No.</div>
+                <div class="client-containter__item">Client name</div>
+                <div class="client-containter__item">Logo</div>
+                <div class="client-containter__item">E-mail</div>
+                <div class="client-containter__item">Edit</div>
             </div>
-            <div class="login-box__right">
-                <form class="login-box__form" action="/singup1.html" method="post">
-                    <div class="login-box__label">
-                        <input name="name" placeholder="First Name" type="text" class="login-box__input">
-                        <p class="login-box__alert">First name is to short increase lenght min 4 charf </p>
-                    </div>
-                    <div class="login-box__label">
-                        <input name="name" placeholder="Last Name" type="text" class="login-box__input">
-                        <p class="login-box__alert">First name is to short increase lenght min 4 char</p>
-                    </div>
-                    <div class="login-box__label">
-                        <input name="email" placeholder="Adres e-mail" type="email" class="login-box__input">
-                        <p class="login-box__alert">First name is to short increase lenght min 4 char</p>
-                    </div>
-                    <div class="login-box__label">
-                        <input name="password" placeholder="Password" type="password" class="login-box__input">
-                        <p class="login-box__alert">Password</p>
-                    </div>
-                    <div class="login-box__label">
-                        <input name="password_confirmation" placeholder="Password Confirmation" type="password"
-                            class="login-box__input">
-                        <p class="login-box__alert">Password Confirmation</p>
-                    </div>
-                    <button type="submit" class="login-box__btn">Sing Up</button>
-                    <a href="./index.html" class="login-box__btn login-box__btn--secondary">Login</a>
-                </form>
+            <div class=" client-containter__row">
+                <div class="client-containter__item">1</div>
+                <div class="client-containter__item">Bladt</div>
+                <div class="client-containter__item">Logo</div>
+                <div class="client-containter__item">blad@info.pl</div>
+                <div class="client-containter__item">
+                    <a href="#" class="client-containter__edit"><img src="img/edit.svg" alt="edit icon"></a>
+                    <a href="#" class="client-containter__delete"><img src="img/trash-2.svg" alt="delete icon"></a>
+                </div>
             </div>
+            <div class=" client-containter__row">
+                <div class="client-containter__item">2</div>
+                <div class="client-containter__item">Bladt</div>
+                <div class="client-containter__item">Logo</div>
+                <div class="client-containter__item">blad@info.pl</div>
+                <div class="client-containter__item">
+                    <a href="#" class="client-containter__edit"><img src="img/edit.svg" alt="edit icon"></a>
+                    <a href="#" class="client-containter__delete"><img src="img/trash-2.svg" alt="delete icon"></a>
+                </div>
+            </div>
+
+
         </div>
+        <!-- <table> 
+            <tr>
+                <th>No</th>
+                <th>Logo</th>
+                <th>Company name</th>
+                <th>E-mail</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Logo</td>
+                <td>Blad</td>
+                <td>blad@info.pl</td>
+                <td>edit </td>
+            </tr>
+        </table> -->
+
     </div>
 
     <!-- Footer -->

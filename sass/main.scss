@@ -53,7 +53,7 @@ body {
 
 	&__container {
 		display: flex;
-		justify-content: start;
+		justify-content: flex-start;
 		align-items: center;
 		height: 100%;
 		max-width: 1400px;
@@ -266,23 +266,13 @@ body {
 			display: flex;
 			// height: 100%;
 			flex-direction: column;
-			align-items: end;
-			justify-content: end;
+			align-items: flex-end;
+			justify-content: flex-end;
 		}
 
 		&__label {
 			position: relative;
 			width: 295px;
-		}
-
-		&__alert {
-			position: absolute;
-			width: 100%;
-			background-color: colors.$alert-color;
-			top: 3.8em;
-			padding: 0.2em 1em;
-			border-radius: 16px;
-			left: 0;
 		}
 
 		&__input {
@@ -294,10 +284,24 @@ body {
 			margin-bottom: 3em;
 			outline: none;
 			background-color: colors.$light-color;
+			display: block;
+			&--file {
+				display: none;
+			}
 		}
 
 		&__input:focus {
 			outline: solid 1.2px colors.$active-color;
+		}
+
+		&__alert {
+			position: absolute;
+			width: 100%;
+			background-color: colors.$alert-color;
+			top: 4.1em;
+			padding: 0.2em 1em;
+			border-radius: 16px;
+			left: 0;
 		}
 
 		&__btn {
@@ -332,6 +336,44 @@ body {
 	//SECTION
 	.title {
 		padding: 2em 2em;
+	}
+	.client-containter {
+		margin-top: 2em;
+		padding: 1em;
+		font-size: 1.4rem;
+		&__heading {
+			display: grid;
+			grid-template-columns: 0.5fr 2fr 1fr 2fr 1fr;
+			font-weight: bold;
+			font-size: 1.5rem;	
+		}
+		&__row {
+			display: grid;
+			grid-template-columns: 0.5fr 2fr 1fr 2fr 1fr;
+			transition: background-color 0.8s ;
+		}
+		&__row:nth-child(even) {
+			background-color: colors.$dark-transparent;
+		}
+		&__row:hover {
+			background-color: colors.$light-transparent;
+		}
+		&__item {
+			text-align: center;
+			padding: 0.5em;
+			border-top: 1px solid colors.$light-transparent;
+			border-bottom: 1px solid colors.$light-transparent;
+			
+		}
+		&__edit, &__delete {
+			margin-right: 5px;
+			padding-top: 0.5em;
+			transition: 0.5s;
+			// cursor: pointer;
+		}
+		&__edit:hover, &__delete:hover {
+			background-color: colors.$success-color;
+		}
 	}
 }
 
