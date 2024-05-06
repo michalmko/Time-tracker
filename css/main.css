@@ -309,40 +309,48 @@ body {
 .container .title {
   padding: 2em 2em;
 }
-.container .client-containter {
-  margin-top: 2em;
-  padding: 1em;
+.container .client-container {
+  padding: 1.2em;
   font-size: 1.4rem;
 }
-.container .client-containter__heading {
+.container .client-container__heading {
   display: grid;
-  grid-template-columns: 0.5fr 2fr 1fr 2fr 1fr;
+  grid-template-columns: 0.3fr 2fr 1fr;
   font-weight: bold;
   font-size: 1.5rem;
 }
-.container .client-containter__row {
+.container .client-container__row {
   display: grid;
-  grid-template-columns: 0.5fr 2fr 1fr 2fr 1fr;
+  grid-template-columns: 0.3fr 2fr 1fr;
   transition: background-color 0.8s;
 }
-.container .client-containter__row:nth-child(even) {
+.container .client-container__row:nth-child(even) {
   background-color: rgba(25, 25, 27, 0.1);
 }
-.container .client-containter__row:hover {
+.container .client-container__row:hover {
   background-color: rgba(249, 245, 234, 0.2);
 }
-.container .client-containter__item {
+.container .client-container__item {
   text-align: center;
   padding: 0.5em;
   border-top: 1px solid rgba(249, 245, 234, 0.2);
   border-bottom: 1px solid rgba(249, 245, 234, 0.2);
 }
-.container .client-containter__edit, .container .client-containter__delete {
+.container .client-container__item-lg {
+  display: none;
+}
+.container .client-container__logo {
+  height: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.container .client-container__edit, .container .client-container__delete {
   margin-right: 5px;
   padding-top: 0.5em;
-  transition: 0.5s;
+  border-radius: 5px;
+  transition: background-color 0.5s;
 }
-.container .client-containter__edit:hover, .container .client-containter__delete:hover {
+.container .client-container__edit:hover, .container .client-container__delete:hover {
   background-color: rgba(25, 135, 84, 0.5);
 }
 
@@ -433,6 +441,15 @@ body {
   .container .login-box__left {
     margin-right: 5em;
     width: 450px;
+  }
+  .container .client-container__heading {
+    grid-template-columns: 0.3fr 2fr 1fr 2fr 1fr;
+  }
+  .container .client-container__row {
+    grid-template-columns: 0.3fr 2fr 1fr 2fr 1fr;
+  }
+  .container .client-container__item-lg {
+    display: block;
   }
 }
 @media (min-width: 1400px) {

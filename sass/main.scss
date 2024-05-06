@@ -337,19 +337,18 @@ body {
 	.title {
 		padding: 2em 2em;
 	}
-	.client-containter {
-		margin-top: 2em;
-		padding: 1em;
+	.client-container {
+		padding: 1.2em;
 		font-size: 1.4rem;
 		&__heading {
 			display: grid;
-			grid-template-columns: 0.5fr 2fr 1fr 2fr 1fr;
+			grid-template-columns: 0.3fr 2fr 1fr;
 			font-weight: bold;
 			font-size: 1.5rem;	
 		}
 		&__row {
 			display: grid;
-			grid-template-columns: 0.5fr 2fr 1fr 2fr 1fr;
+			grid-template-columns: 0.3fr 2fr 1fr;
 			transition: background-color 0.8s ;
 		}
 		&__row:nth-child(even) {
@@ -363,12 +362,21 @@ body {
 			padding: 0.5em;
 			border-top: 1px solid colors.$light-transparent;
 			border-bottom: 1px solid colors.$light-transparent;
-			
+		}
+
+		&__item-lg{
+			display: none;
+		}
+		&__logo {
+			height: 30px;
+			background-color: #fff;
+			border-radius: 10px;
 		}
 		&__edit, &__delete {
 			margin-right: 5px;
 			padding-top: 0.5em;
-			transition: 0.5s;
+			border-radius: 5px;
+			transition: background-color 0.5s;
 			// cursor: pointer;
 		}
 		&__edit:hover, &__delete:hover {
@@ -483,6 +491,17 @@ body {
 			&__left {
 				margin-right: 5em;
 				width: 450px;
+			}
+		}
+		.client-container {
+			&__heading {
+				grid-template-columns: 0.3fr 2fr 1fr 2fr 1fr;
+			}
+			&__row {
+				grid-template-columns: 0.3fr 2fr 1fr 2fr 1fr;
+			}
+			&__item-lg{
+				display: block;
 			}
 		}
 	}
